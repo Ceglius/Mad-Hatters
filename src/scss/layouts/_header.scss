@@ -46,6 +46,11 @@
     position: relative;
     z-index: 10;
     color: silver;
+
+    @media (max-width: $breakpoint768){
+      font-size: rem(10);
+      
+    }
   }
 
   // .header__logo
