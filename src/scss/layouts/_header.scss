@@ -6,26 +6,124 @@
 */
 
 .header {
-    padding: rem(30) 0;
-    // .header__container
-    &__container {
-        @include flex-sb-center($gap:30);
-        
+  @include adaptiveValue("padding-top", 30, 20);
+  @include adaptiveValue("padding-bottom", 30, 20);
+
+  @media (max-width: $breakpoint768) {
+    position: relative;
+
+    &::before {
+      content: "";
+      background-color: darken($color: #faf7f3, $amount: 5);
+      width: 0;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      transition: width 0.3s;
     }
 
-    // .header__logo
-    &__logo {
-        
+    &._active {
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+  // .header__container
+  &__container {
+    @include flex-sb-center($gap: 10);
+
+    @media (min-width: $breakpoint768) {
+      @include flex-column($gap: 30);
+      align-items: center;
+    }
+  }
+
+  // .header__dots
+  &__dots {
+    position: relative;
+    z-index: 10;
+    color: silver;
+  }
+
+  // .header__logo
+  &__logo {
+    @include flex-center();
+    position: relative;
+    z-index: 10;
+
+    @media (max-width: $breakpoint768) {
+      margin-right: auto;
     }
 
-    // .header__menu
-    &__menu {
-
-        @media (max-width: $burgerBreakpoint){
-            margin-left: auto;
-        }
+    > .logo {
+      margin-top: rem(3);
+      @include adaptiveValue("width", 302, 180);
     }
+  }
+
+  // .header__menu
+  &__menu {
+  }
 }
 
+.menu {
+  // .menu__list
+  &__list {
+    @media (max-width: $breakpoint768) {
+      background-color: darken($color: #faf7f3, $amount: 5);
+      @include adaptiveValue("padding-top", 80, 63);
+      overflow: auto;
+      position: fixed;
+      left: -100%;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      transition: left 0.3s;
+      padding-left: rem(15);
 
+      &._active {
+        left: 0;
+        z-index: 5;
+      }
+    }
 
+    @media (min-width: $breakpoint768) {
+      @include flex-center();
+      @include adaptiveValue("column-gap", 65, 40);
+      @include adaptiveValue("row-gap", 20, 10);
+      flex-wrap: wrap;
+    }
+    @media (max-width: $breakpoint768) {
+      @include flex-column($gap: 0);
+    }
+  }
+
+  // .menu__item
+  &__item {
+    @media (max-width: $breakpoint768) {
+      &:not(:last-child) {
+        margin-bottom: rem(10);
+      }
+    }
+  }
+
+  // .menu__link
+  &__link {
+    color: var(--heading-co);
+    font-size: rem(16);
+    line-height: calc((32px / 16px) * 100%);
+
+    @media (min-width: $breakpoint768) {
+      &:hover {
+        border-bottom: 1px solid var(--text-co);
+      }
+    }
+    @media (max-width: $breakpoint768) {
+      font-size: rem(20);
+      letter-spacing: 1px;
+    }
+  }
+}

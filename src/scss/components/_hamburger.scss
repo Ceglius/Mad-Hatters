@@ -12,7 +12,8 @@
 		position: relative;
 		width: rem(30);
 		height: rem(18);
-		z-index: 5;
+		z-index: 10;
+		
 		@media (any-hover: none) {
 			cursor: default;
 		}

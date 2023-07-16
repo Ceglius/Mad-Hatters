@@ -5,7 +5,8 @@ const webpack = require("webpack");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = merge(common, {
-  target: "web",
+  cache: true,
+  // target: "web",
   output: {
     filename: "[name].bundle.js",
     publicPath: '/',
@@ -32,7 +33,7 @@ module.exports = merge(common, {
     
     open: true,
     watchFiles: ["src/**/*.hbs"],
-    hot: false
+    
   },
 
   module: {
