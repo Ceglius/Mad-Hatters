@@ -5,4 +5,55 @@
   ==== Hero ====
 */
 
+.hero {
+  // .hero__container
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    
+    @media (max-width: $breakpoint992){
+      flex-direction: column-reverse;
+      align-items: center;
 
+
+      
+    }
+  }
+
+  // .hero__content
+  &__content {
+    @include adaptiveValue('margin-top',80,160);
+    flex: 0 1 calc(750 / 1170 * 100%);
+    @include flex-column($gap: 15);
+
+    a {
+     @media (min-width: $breakpoint768){
+      align-self: flex-start;
+     }
+    }
+  }
+
+  // .hero__images
+  &__images {
+    flex: 1 1 auto;
+    display: flex
+  }
+
+  // .hero__item
+  &__item {
+   @include adaptiveValue('width',256,173);
+   @include adaptiveValue('height',370,265);
+   z-index: 10;
+
+   &:nth-child(2) {
+    align-self: flex-end;
+    z-index: 5;
+    @include adaptiveValue('margin-left',-115,-72);
+    @include adaptiveValue('margin-bottom',-100,-70);
+    @include adaptiveValue('width',221,140);
+    @include adaptiveValue('height',300,215);
+
+   }
+  }
+}

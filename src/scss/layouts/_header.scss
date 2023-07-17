@@ -6,8 +6,8 @@
 */
 
 .header {
-  @include adaptiveValue("padding-top", 30, 20);
-  @include adaptiveValue("padding-bottom", 30, 20);
+  @include adaptiveValue("padding-top", 24, 18);
+  @include adaptiveValue("padding-bottom", 24, 18);
 
   @media (max-width: $breakpoint768) {
     position: relative;

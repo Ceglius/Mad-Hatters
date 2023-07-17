@@ -5,18 +5,17 @@
    ==== Main ====
 */
 
-.page  {
-   border-top: 2px solid var(--lines-co);
-   border-bottom: 2px solid var(--lines-co);
-   position: relative;
+.page {
+  border-top: 2px solid var(--lines-co);
+  border-bottom: 2px solid var(--lines-co);
+  position: relative;
 
-      // .page__strips
-      &__strips {
-         
-      }
+  // .page__strips
+  &__strips {
+  }
+
+  // .page__hero
+  &__hero {
+    @include adaptiveValue("margin-top", 140, 28);
+  }
 }
-
-
-
-
-

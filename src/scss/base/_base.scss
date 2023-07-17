@@ -1,3 +1,6 @@
+@use '../abstract/vars' as *;
+@use '../abstract/mixins' as *;
+
 /*
   ==== Base ====
 */
@@ -12,11 +15,11 @@ body {
   font-weight: var(--fw-regular);
   color: var(--text-co);
   background-color: var(--page-bg);
-  
+
   &.locked {
     overflow: hidden;
-		touch-action: none;
-		overscroll-behavior: none;
+    touch-action: none;
+    overscroll-behavior: none;
   }
 }
 
@@ -25,13 +28,41 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  
+
   @supports (overflow: clip) {
     overflow: clip;
   }
-  
+
   > main {
     flex: 1 1 auto;
   }
 }
 
+.section-title {
+  font-family: var(--ff-secondary);
+  @include adaptiveValue("font-size", 102, 45);
+  font-style: normal;
+  font-weight: var(--fw-bold);
+  line-height: 107.843%;
+  color: var(--heading-co);
+
+  span {
+    @include adaptiveValue("font-size", 43, 21);
+
+  }
+  span {
+    &:nth-child(1) {
+      position: relative;
+      @include adaptiveValue("top", -40, -15);
+    }
+
+    &:nth-child(2) {
+      position: relative;
+      @include adaptiveValue("top", -15, -8);
+    }
+  }
+}
+
+.section-top-text {
+  font-weight: 300;
+}

@@ -5,6 +5,11 @@
   ==== Buttons ====
 */
 
-.button {
-
+.btn {
+  padding: rem(18) rem(47);
+  border-radius: 6px;
+  border: 1px solid #CFADAC;
+  background: #FFF; 
+  color: #967675;
+  text-align: center;
 }
