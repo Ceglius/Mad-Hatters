@@ -17,7 +17,12 @@
   // .page__hero
   &__hero {
     @include adaptiveValue("padding-top", 140, 28);
-    @include adaptiveValue('padding-bottom',120,48);
-    
+    @include adaptiveValue("padding-bottom",140, 24);
+  }
+
+  // .page__options
+  &__options {
+    @include adaptiveValue("padding-top", 60, 24);
+    @include adaptiveValue("padding-bottom", 90, 45);
   }
 }

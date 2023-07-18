@@ -1,0 +1,55 @@
+@use "../abstract/vars" as *;
+@use "../abstract/mixins" as *;
+
+/*
+   ==== Options ====
+*/
+
+.options {
+  // .options__container
+  &__container {
+  }
+
+  // .options__list
+  &__list {
+  }
+}
+.list-options {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    column-gap: rem(30);
+    row-gap: rem(60);
+
+  // .list-options__item
+  &__item {
+   flex: 0 1 auto;
+  }
+
+  // .list-options__title
+  &__title {
+    
+    font-family: var(--ff-secondary);
+    font-size: rem(38);
+    font-style: italic;
+    margin-bottom: rem(30);
+    color: #111;
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+
+    &::before {
+        color: var(--text-co);
+        font-size: rem(10);
+        
+    }
+  }
+
+  // .list-options__text
+  &__text {
+    line-height: 165.9%;
+    max-width: rem(223);
+    margin-left: rem(50);
+  }
+}

@@ -66,8 +66,12 @@ export async function logJSONData(url) {
 
 export function stickyHeader() {
   const header = document.querySelector(".header");
+
   let scrollPosition = window.scrollY;
   let previousScrollPosition = scrollPosition;
+
+  window.addEventListener("scroll", stickyCallBack);
+  window.addEventListener("resize", stickyCallBack);
 
   function stickyCallBack() {
     const currentScrollPosition = window.scrollY;
@@ -76,8 +80,11 @@ export function stickyHeader() {
 
     if (currentScrollPosition > previousScrollPosition) {
       // Scrolling down
+
       if (this.window.innerWidth > 768) {
-        header.style.transform = `translateY(-${headerHeight - headerMenuHeight - 48}px)`;
+        header.style.transform = `translateY(-${headerHeight -
+          headerMenuHeight -
+          48}px)`;
       }
       header.classList.add("hidden");
     } else {
