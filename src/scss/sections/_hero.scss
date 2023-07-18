@@ -23,7 +23,7 @@
 
   // .hero__content
   &__content {
-    @include adaptiveValue('margin-top',80,160);
+    @include adaptiveValue('margin-top',80,140);
     flex: 0 1 calc(750 / 1170 * 100%);
     @include flex-column($gap: 15);
 
@@ -44,11 +44,11 @@
   &__item {
    @include adaptiveValue('width',256,173);
    @include adaptiveValue('height',370,265);
-   z-index: 10;
+   z-index: 3;
 
    &:nth-child(2) {
     align-self: flex-end;
-    z-index: 5;
+    z-index: 1;
     @include adaptiveValue('margin-left',-115,-72);
     @include adaptiveValue('margin-bottom',-100,-70);
     @include adaptiveValue('width',221,140);

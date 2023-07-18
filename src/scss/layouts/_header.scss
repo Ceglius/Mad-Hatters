@@ -8,10 +8,26 @@
 .header {
   @include adaptiveValue("padding-top", 24, 18);
   @include adaptiveValue("padding-bottom", 24, 18);
+  background-color: #faf7f3;
+  width: 100%;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  transition: transform 0.3s ease;
+  z-index: 10;
+  
+  @media (min-width: $breakpoint768) {
+    &.hidden {
+      background-color: darken($color: #faf7f3, $amount: 5);
+    }
+  }
+
+  @media (max-width: $breakpoint768){
+    background-color: darken($color: #faf7f3, $amount: 5);
+  }
 
   @media (max-width: $breakpoint768) {
-    position: relative;
-
+   
     &::before {
       content: "";
       background-color: darken($color: #faf7f3, $amount: 5);
@@ -47,9 +63,8 @@
     z-index: 10;
     color: silver;
 
-    @media (max-width: $breakpoint768){
+    @media (max-width: $breakpoint768) {
       font-size: rem(10);
-      
     }
   }
 

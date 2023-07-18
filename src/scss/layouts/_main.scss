@@ -17,5 +17,7 @@
   // .page__hero
   &__hero {
     @include adaptiveValue("margin-top", 140, 28);
+    @include adaptiveValue('margin-bottom',120,48);
+    
   }
 }

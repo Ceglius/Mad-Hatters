@@ -16,7 +16,7 @@ body {
   color: var(--text-co);
   background-color: var(--page-bg);
 
-  &.locked {
+  &._locked {
     overflow: hidden;
     touch-action: none;
     overscroll-behavior: none;
@@ -66,3 +66,5 @@ body {
 .section-top-text {
   font-weight: 300;
 }
+
+
