@@ -1,9 +1,133 @@
 @use '../abstract/vars' as *;
 @use '../abstract/mixins' as *;
+
 /*
   ==== Footer ====
 */
 .footer {
- text-align: center;
-  padding: rem(20);
+  background-color: #23242c;
+  @include adaptiveValue("padding-top", 135, 77);
+  @include adaptiveValue("padding-bottom", 135, 77);
+
+  // .footer__container
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include adaptiveValue("gap", 80, 40);
+  }
+
+  // .footer__body
+  &__body {
+    flex: 0 1 rem(300);
+    @media (max-width: $containerWidthNreakpoint) {
+      margin-left: rem(15);
+    }
+  }
+
+  // .footer__logo
+  &__logo {
+    margin-bottom: rem(32);
+    position: relative;
+
+    &::before {
+      color: var(--page-bg);
+      font-size: rem(10);
+      position: absolute;
+      left: rem(-20);
+      top: 33%;
+    }
+    svg {
+      max-width: rem(245);
+    }
+  }
+
+  // .footer__text
+  &__text {
+    color: #fff;
+    font-size: rem(18);
+    font-weight: var(--fw-semi-bold);
+    line-height: 177.778%;
+  }
+
+  // .footer__links
+  &__links {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-end;
+
+    @media (max-width: $containerWidthNreakpoint) {
+      margin-left: rem(15);
+    }
+    @media (max-width: $breakpoint768) {
+      justify-content: flex-start;
+    }
+  }
+
+  // .footer__copy
+  &__copy {
+    flex-basis: 100%;
+    color: #fff;
+    opacity: 0.5;
+
+    p {
+      font-size: rem(16);
+      line-height: 200%;
+
+      @media (max-width: $breakpoint480) {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.links-footer {
+  // .links-footer__list
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    @include adaptiveValue("gap", 100, 50);
+
+    @media (max-width: $breakpoint768) {
+    }
+  }
+  // .links-footer__items
+  &__items {
+    @include flex-column($gap: 13);
+  }
+
+  // .links-footer__item
+  &__item {
+  }
+
+  // .links-footer__title
+  &__title {
+    position: relative;
+    font-size: rem(24);
+    line-height: 133.333%;
+    color: var(--page-bg);
+    font-weight: var(--fw-regular);
+    margin-bottom: rem(13);
+
+    &::before {
+      font-size: rem(10);
+      position: absolute;
+      left: rem(-20);
+      top: 10%;
+    }
+  }
+
+  // .links-footer__link
+  &__link {
+    color: #fff;
+    font-weight: 400;
+
+    @media (min-width: $breakpoint768) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
