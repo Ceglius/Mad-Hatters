@@ -5,19 +5,73 @@
   ==== Hero ====
 */
 
-.hero {
+.hero {     
+
   // .hero__container
   &__container {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    position: relative;
     
     @media (max-width: $breakpoint992){
       flex-direction: column-reverse;
       align-items: center;
+    }
 
 
-      
+    &::before {
+      content: "";
+      position: absolute;
+      top: 38%;
+      right: 25%;
+      z-index: 1;
+      @include adaptiveValue('height',246,166);
+      @include adaptiveValue('width',246,166);
+      background-color: #FAE2D6;
+      border-radius: 50%;
+
+      @media (max-width: $breakpoint992){
+        top: 25%;
+        right: unset;
+        left: 20%;
+      }
+      @media (max-width: $breakpoint560){
+        top: 25%;
+        left: 18%;
+      }
+      @media (max-width: $breakpoint480){
+        top: 25%;
+        left: 0;
+      }
+    }
+  
+    &::after {
+      content: "";
+      position: absolute;
+      top: 5%;
+      right: 13%;                 
+      z-index: -1;
+
+      @include adaptiveValue('height',518,350);
+      @include adaptiveValue('width',518,350);
+
+      border-radius: 50%;
+      border: 2px solid var(--lines-co);
+
+      @media (max-width: $breakpoint992){
+        top: 8%;
+        right: unset;
+        left: 8%;
+      }
+
+      @media (max-width: $breakpoint560){
+        left: 0;
+      }
+      @media (max-width: $breakpoint480){
+        top: 10%;
+        left: -30%;
+      }
     }
   }
 

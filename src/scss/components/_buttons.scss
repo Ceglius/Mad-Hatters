@@ -12,12 +12,18 @@
   background: #FFF; 
   color: #967675;
   text-align: center;
+  box-shadow: 0px 15px 15px rgba(150, 118, 117, 0.3);
   transition: all 0.3s ;
 
     @media (min-width: $breakpoint768){
       &:hover {
-        background-color: #967675;;
+        background-color: rgb(150, 118, 117);
+        box-shadow: 0px 0px 0px rgba(150, 118, 117, 0.3);
         color: #fff;
+      }
+
+      &:active {
+        transform: translateY(5px);
       }
     }
 }

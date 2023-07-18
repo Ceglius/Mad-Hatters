@@ -52,8 +52,7 @@ export function menuInit() {
         document.documentElement.classList.toggle("menu-open");
         document.querySelector(".menu__list").classList.toggle("_active");
         document.querySelector(".header").classList.toggle("_active");
-        document.querySelector("body").classList.toggle("_locked")
-
+        document.querySelector("body").classList.toggle("_locked");
       }
     });
   }
@@ -67,37 +66,29 @@ export async function logJSONData(url) {
 
 export function stickyHeader() {
   const header = document.querySelector(".header");
-  
-  let scrollPosition = window.scrollY
+  let scrollPosition = window.scrollY;
   let previousScrollPosition = scrollPosition;
-  
-  
-  window.addEventListener("scroll", function() {
+
+  function stickyCallBack() {
     const currentScrollPosition = window.scrollY;
-    const headerMenuHeight = document.querySelector('.menu__list').offsetHeight;
+    const headerMenuHeight = document.querySelector(".menu__list").offsetHeight;
     const headerHeight = header.offsetHeight;
- 
-   
+
     if (currentScrollPosition > previousScrollPosition) {
       // Scrolling down
-
       if (this.window.innerWidth > 768) {
-        header.style.transform = `translateY(-${headerHeight - headerMenuHeight - 48}px)`
+        header.style.transform = `translateY(-${headerHeight - headerMenuHeight - 48}px)`;
       }
-      
-      
-        header.classList.add("hidden")
+      header.classList.add("hidden");
     } else {
       // Scrolling up
       if (this.window.innerWidth > 768) {
-        header.style.transform = `translateY(0px)`
+        header.style.transform = `translateY(0px)`;
       } else {
-        header.style.transform = "none"
+        header.style.transform = "none";
       }
-      
-      header.classList.remove("hidden")
-
+      header.classList.remove("hidden");
     }
     previousScrollPosition = currentScrollPosition;
-  });
+  }
 }
