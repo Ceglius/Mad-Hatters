@@ -13,7 +13,7 @@
   position: sticky;
   z-index: 1;
   top: 0;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: top 0.3s ease, background-color 0.3s ease;
   z-index: 10;
   
   @media (min-width: $breakpoint768) {

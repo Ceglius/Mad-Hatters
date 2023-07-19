@@ -79,21 +79,17 @@ export function stickyHeader() {
     const headerHeight = header.offsetHeight;
 
     if (currentScrollPosition > previousScrollPosition) {
-      // Scrolling down
+      
 
       if (this.window.innerWidth > 768) {
-        header.style.transform = `translateY(-${headerHeight -
-          headerMenuHeight -
-          48}px)`;
+        header.style.top = `-${headerHeight - headerMenuHeight - 48}px`;
+      } else {
+        header.style.top = `-${headerHeight}px`;
       }
       header.classList.add("hidden");
     } else {
-      // Scrolling up
-      if (this.window.innerWidth > 768) {
-        header.style.transform = `translateY(0px)`;
-      } else {
-        header.style.transform = "none";
-      }
+      
+      header.style.top = `0`;
       header.classList.remove("hidden");
     }
     previousScrollPosition = currentScrollPosition;
