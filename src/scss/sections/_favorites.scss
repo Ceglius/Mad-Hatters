@@ -1,0 +1,44 @@
+@use "../abstract/vars" as *;
+@use "../abstract/mixins" as *;
+
+/*
+   ==== Favorites ====
+*/
+.favorites {
+  // .favorites__container
+  &__container {
+    display: flex;
+    @include adaptiveValue("gap", 80, 40);
+
+    @media (max-width: $breakpoint992) {
+      flex-direction: column;
+    }
+  }
+
+  // .favorites__images
+  &__images {
+    flex: 0 1 calc(591 / 1174 * 100%);
+    @include adaptiveValue("min-height", 458, 300);
+
+    @media (max-width: $breakpoint992) {
+      flex: 1 1 auto;
+    }
+
+    @media (max-width: $breakpoint560) {
+      margin: 0 rem(-20);
+    }
+  }
+
+  // .favorites__content
+  &__content {
+    flex: 1;
+
+    @include flex-column($gap: 30);
+
+    a {
+      @media (min-width: $breakpoint768) {
+        align-self: flex-start;
+      }
+    }
+  }
+}
