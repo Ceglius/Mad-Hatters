@@ -28,12 +28,18 @@
   // .page__favorites
   &__favorites {
     @include adaptiveValue("padding-top", 90, 24);
-    @include adaptiveValue("padding-bottom", 115, 45 );
+    @include adaptiveValue("padding-bottom", 115, 45);
   }
 
   // .page__styles
   &__styles {
     @include adaptiveValue("padding-top", 90, 24);
+    @include adaptiveValue("padding-bottom", 90, 45);
+  }
+
+  // .page__quote
+  &__quote {
+    @include adaptiveValue("padding-top", 90, 45);
     @include adaptiveValue("padding-bottom", 90, 45);
   }
 }
