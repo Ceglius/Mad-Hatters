@@ -33,7 +33,7 @@ export function removeClasses(array, className) {
 
 export function placeholder(type, placeholder) {
   const input = document.querySelector(`input[type="${type}"]`);
-
+  input.setAttribute("placeholder", `${placeholder}`)
   input.addEventListener("focus", function() {
     this.removeAttribute("placeholder");
   });

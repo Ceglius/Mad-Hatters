@@ -42,4 +42,10 @@
     @include adaptiveValue("padding-top", 90, 45);
     @include adaptiveValue("padding-bottom", 90, 45);
   }
+
+      // .page__subscribe
+      &__subscribe {
+        @include adaptiveValue("padding-top", 70, 45);
+        @include adaptiveValue("padding-bottom", 70, 45);
+      }
 }

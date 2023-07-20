@@ -5,4 +5,5 @@ import './files/scripts.js'
 
 flsFunctions.menuInit()
 flsFunctions.stickyHeader()
+flsFunctions.placeholder("email", "Enter your email")
 
