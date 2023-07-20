@@ -88,8 +88,11 @@ export function stickyHeader() {
       }
       header.classList.add("hidden");
     } else {
-      
-      header.style.top = `0`;
+      if (this.window.innerWidth > 768) {
+        header.style.borderBottom = "1px solid var(--lines-co)"
+        if(currentScrollPosition === 2) header.style.removeProperty("border-bottom");
+      } 
+      header.style.removeProperty("top");
       header.classList.remove("hidden");
     }
     previousScrollPosition = currentScrollPosition;

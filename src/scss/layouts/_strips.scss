@@ -12,13 +12,13 @@
   height: 100%;
   display: flex;
   justify-content: space-between;
-  z-index: -1;
+  z-index: -2;
 
   // .strips__item
   &__item {
     flex: 1;
     height: 100%;
-    border-left: 2px solid var(--lines-co);
+    border-left: 1px solid var(--lines-co);
 
     @media (max-width: $breakpoint992) {
       &:first-child {
