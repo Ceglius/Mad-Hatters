@@ -66,13 +66,9 @@ export async function logJSONData(url) {
 
 export function stickyHeader() {
   const header = document.querySelector(".header");
-
   let scrollPosition = window.scrollY;
   let previousScrollPosition = scrollPosition;
-
-  window.addEventListener("scroll", stickyCallBack);
-  window.addEventListener("resize", stickyCallBack);
-
+ 
   function stickyCallBack() {
     const currentScrollPosition = window.scrollY;
     const headerMenuHeight = document.querySelector(".menu__list").offsetHeight;
@@ -80,21 +76,27 @@ export function stickyHeader() {
 
     if (currentScrollPosition > previousScrollPosition) {
       
-
       if (this.window.innerWidth > 768) {
         header.style.top = `-${headerHeight - headerMenuHeight - 48}px`;
-      } else {
-        header.style.top = `-${headerHeight}px`;
+      } else if(this.window.innerWidth <  768 && !document.body.classList.contains("_locked")) {
+        header.style.top = `-${headerHeight}px`; 
       }
+
       header.classList.add("hidden");
     } else {
+
       if (this.window.innerWidth > 768) {
         header.style.borderBottom = "1px solid var(--lines-co)"
         if(currentScrollPosition === 2) header.style.removeProperty("border-bottom");
-      } 
+      } else {
+        
+      }
       header.style.removeProperty("top");
       header.classList.remove("hidden");
     }
     previousScrollPosition = currentScrollPosition;
   }
+
+  window.addEventListener("scroll", stickyCallBack);
+  window.addEventListener("resize", stickyCallBack);
 }

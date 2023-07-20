@@ -17,7 +17,7 @@
   // .page__hero
   &__hero {
     @include adaptiveValue("padding-top", 140, 28);
-    @include adaptiveValue("padding-bottom",250, 24);
+    @include adaptiveValue("padding-bottom", 250, 24);
   }
 
   // .page__options
@@ -26,9 +26,14 @@
     @include adaptiveValue("padding-bottom", 90, 45);
   }
   // .page__favorites
-  &__favorites{
+  &__favorites {
     @include adaptiveValue("padding-top", 90, 24);
-    @include adaptiveValue("padding-bottom", 115, 45);
+    @include adaptiveValue("padding-bottom", 115, 45 );
   }
-  
+
+  // .page__styles
+  &__styles {
+    @include adaptiveValue("padding-top", 90, 24);
+    @include adaptiveValue("padding-bottom", 90, 45);
+  }
 }

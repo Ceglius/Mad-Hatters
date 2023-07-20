@@ -26,26 +26,6 @@
     background-color: darken($color: #faf7f3, $amount: 5);
   }
 
-  @media (max-width: $breakpoint768) {
-   
-    &::before {
-      content: "";
-      background-color: darken($color: #faf7f3, $amount: 5);
-      width: 0;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 10;
-      transition: width 0.3s;
-    }
-
-    &._active {
-      &::before {
-        width: 100%;
-      }
-    }
-  }
 
   // .header__container
   &__container {
