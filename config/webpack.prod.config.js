@@ -5,13 +5,18 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const ZipPlugin = require("zip-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 module.exports = merge(common, {
   entry: {
     main: "./src/index.js",
   },
 
   output: {
-    filename: "./js/[name].[contenthash:10].js",
+    
+
+    filename: ({ chunk: { name } }) => {
+      return name === 'main' ? './js/[name].min.[contenthash].js': './js/[name].[contenthash].js';
+    },
   },
   mode: "production",
   optimization: {
@@ -28,11 +33,6 @@ module.exports = merge(common, {
           priority: 10,
           enforce: true,
         },
-        // style: {
-        //   test: /_libs\.s?css$/,
-        //   name: "vendors",
-        //   enforce: true,
-        // },
       },
     },
     minimize: true,
@@ -94,8 +94,8 @@ module.exports = merge(common, {
     
     new CleanWebpackPlugin({
       cleanAfterEveryBuildPatterns: ['**/*.LICENSE.txt'],
-    })
-    
+    }),
+
     // new ZipPlugin({
     //   path: '../',
     //   filename: "dist.zip"

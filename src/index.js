@@ -1,5 +1,5 @@
 // ---- Js ---- //
-import './js/main.js'
+import './js/app.js'
 
 // ---- Styles ---- //
 import './scss/style.scss'
