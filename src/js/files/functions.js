@@ -46,6 +46,7 @@ export function placeholder(type, placeholder) {
 }
 
 export function menuInit() {
+
   if (document.querySelector(".icon-menu")) {
     document.addEventListener("click", function(e) {
       if (e.target.closest(".icon-menu")) {
@@ -56,6 +57,9 @@ export function menuInit() {
       }
     });
   }
+  window.addEventListener("resize", () => {
+    document.querySelector("body").classList.remove("_locked");
+  })
 }
 
 export async function logJSONData(url) {

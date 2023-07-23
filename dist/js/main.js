@@ -19,6 +19,9 @@
                 document.querySelector("body").classList.toggle("_locked");
             }
         }));
+        window.addEventListener("resize", (() => {
+            document.querySelector("body").classList.remove("_locked");
+        }));
     }
     function stickyHeader() {
         const header = document.querySelector(".header");
